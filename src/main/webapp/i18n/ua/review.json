@@ -1,0 +1,27 @@
+{
+  "testApp": {
+    "review": {
+      "home": {
+        "title": "Reviews",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Створити новий Review",
+        "createOrEditLabel": "Створити чи редагувати Review",
+        "notFound": "No Reviews found"
+      },
+      "created": "Новий Review створений з ідентифікатором {{ param }}",
+      "updated": "Review оновлений з ідентифікатором {{ param }}",
+      "deleted": "Review видалений з ідентифікатором {{ param }}",
+      "delete": {
+        "question": "Ви впевнені, що хочете видалити Review {{ id }}?"
+      },
+      "detail": {
+        "title": "Review"
+      },
+      "id": "ID",
+      "rating": "Rating",
+      "comment": "Comment",
+      "product": "Product",
+      "customer": "Customer"
+    }
+  }
+}
