@@ -1,0 +1,49 @@
+entity Product {
+    name String required,
+    description String,
+    price BigDecimal required,
+    stockCount Integer required,
+    imageUrl String
+}
+
+entity Category {
+    name String required
+}
+
+entity Customer {
+    firstName String required,
+    lastName String required,
+    email String required,
+    address String,
+    phoneNumber String
+}
+
+entity Order {
+    orderDate LocalDate required,
+    totalPrice BigDecimal required
+}
+
+entity OrderItem {
+    quantity Integer required
+}
+
+entity Review {
+    rating Integer required min(1) max(5),
+    comment String
+}
+
+relationship ManyToOne {
+    Product{category(name)} to Category,
+    Order{customer(firstName)} to Customer,
+    Review{product(name)} to Product{reviews},
+    Review{customer(firstName)} to Customer{reviews},
+    OrderItem{product(name)} to Product
+}
+
+relationship OneToMany {
+    Order{orderItems} to OrderItem{order(id)}
+}
+
+paginate Product, Category, Customer, Order, Review with pagination
+
+dto * with mapstruct
