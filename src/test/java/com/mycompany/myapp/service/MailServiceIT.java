@@ -141,6 +141,16 @@ class MailServiceIT {
     }
 
     @Test
+    void testSendNullEmail() {
+        User user = new User();
+        user.setLangKey(Constants.DEFAULT_LANGUAGE);
+        user.setLogin("john");
+        user.setEmail(null);
+        mailService.sendEmailFromTemplate(user, "mail/testEmail", "email.test.title");
+        verifyNoInteractions(javaMailSender);
+    }
+
+    @Test
     void testSendActivationEmail() throws Exception {
         User user = new User();
         user.setLangKey(Constants.DEFAULT_LANGUAGE);
