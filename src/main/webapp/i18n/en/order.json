@@ -21,7 +21,8 @@
       "orderDate": "Order Date",
       "totalPrice": "Total Price",
       "orderItems": "Order Items",
-      "customer": "Customer"
+      "customer": "Customer",
+      "orderStatus": "Order Status"
     }
   }
 }
