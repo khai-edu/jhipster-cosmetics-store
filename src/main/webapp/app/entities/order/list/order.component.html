@@ -57,6 +57,13 @@
             </div>
           </th>
           <th scope="col"></th>
+          <th scope="col" jhiSortBy="orderStatus">
+            <div class="d-flex">
+              <span jhiTranslate="testApp.order.orderStatus">Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -71,6 +78,8 @@
               <a [routerLink]="['/customer', order.customer.id, 'view']">{{ order.customer.firstName }}</a>
             </div>
           </td>
+
+          <td>{{ order.orderStatus }}</td>
           <td class="text-end">
             <div class="btn-group">
               <button type="submit" [routerLink]="['/order', order.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">

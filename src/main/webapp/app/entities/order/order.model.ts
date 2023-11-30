@@ -6,6 +6,7 @@ export interface IOrder {
   orderDate?: dayjs.Dayjs | null;
   totalPrice?: number | null;
   customer?: Pick<ICustomer, 'id' | 'firstName'> | null;
+  orderStatus?: string | null;
 }
 
 export type NewOrder = Omit<IOrder, 'id'> & { id: null };

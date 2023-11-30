@@ -41,6 +41,9 @@ public class Order implements Serializable {
     @JsonIgnoreProperties(value = { "reviews" }, allowSetters = true)
     private Customer customer;
 
+    @Column(name = "order_status", nullable = true)
+    private OrderStatus orderStatus;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -153,5 +156,13 @@ public class Order implements Serializable {
             ", orderDate='" + getOrderDate() + "'" +
             ", totalPrice=" + getTotalPrice() +
             "}";
+    }
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
     }
 }

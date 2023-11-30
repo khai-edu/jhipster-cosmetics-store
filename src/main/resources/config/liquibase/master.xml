@@ -24,4 +24,5 @@
     <include file="config/liquibase/changelog/20231019130930_added_entity_constraints_Review.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20231127145530_updated_Order_add_order_status_column.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>

@@ -1,5 +1,6 @@
 package com.mycompany.myapp.service.dto;
 
+import com.mycompany.myapp.domain.OrderStatus;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -21,6 +22,8 @@ public class OrderDTO implements Serializable {
     private BigDecimal totalPrice;
 
     private CustomerDTO customer;
+
+    private OrderStatus orderStatus;
 
     public Long getId() {
         return id;
@@ -84,5 +87,13 @@ public class OrderDTO implements Serializable {
             ", totalPrice=" + getTotalPrice() +
             ", customer=" + getCustomer() +
             "}";
+    }
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
     }
 }

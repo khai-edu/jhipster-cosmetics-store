@@ -1,6 +1,7 @@
 package com.mycompany.myapp.service;
 
 import com.mycompany.myapp.domain.Order;
+import com.mycompany.myapp.domain.OrderStatus;
 import com.mycompany.myapp.repository.OrderRepository;
 import com.mycompany.myapp.service.dto.OrderDTO;
 import com.mycompany.myapp.service.mapper.OrderMapper;
@@ -39,6 +40,7 @@ public class OrderService {
     public OrderDTO save(OrderDTO orderDTO) {
         log.debug("Request to save Order : {}", orderDTO);
         Order order = orderMapper.toEntity(orderDTO);
+        order.setOrderStatus(OrderStatus.CREATED);
         order = orderRepository.save(order);
         return orderMapper.toDto(order);
     }
